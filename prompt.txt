@@ -1,0 +1,1 @@
+Convert the text in the picture to running script style.
