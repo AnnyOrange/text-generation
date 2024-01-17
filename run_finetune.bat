@@ -13,9 +13,9 @@ accelerate launch --mixed_precision="fp16" finetune_instruct_pix2pix.py ^
   --checkpointing_steps=50 --checkpoints_total_limit=2 ^
   --learning_rate=5e-06 --lr_warmup_steps=0 ^
   --mixed_precision=fp16 ^
-  --val_image_url="https://raw.githubusercontent.com/AllenAnZifeng/DeepLearning282/main/test_data/0.jpg" ^
-  --val_gt_url="https://raw.githubusercontent.com/AllenAnZifeng/DeepLearning282/main/test_data/0-g.jpg" ^
-  --validation_prompt="Colorize the image." ^
+  --val_image_url="https://github.com/AnnyOrange/picture/blob/main/init.png?raw=true" ^
+  --val_gt_url="https://github.com/AnnyOrange/picture/blob/main/chgt.png?raw=true" ^
+  --validation_prompt="Convert the text in the picture to running script style." ^
   --seed=42 ^
   --output_dir=%OUTPUT_DIR% ^
   --report_to=wandb ^
