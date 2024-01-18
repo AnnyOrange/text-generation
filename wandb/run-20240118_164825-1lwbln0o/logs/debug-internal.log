@@ -1,0 +1,625 @@
+2024-01-18 16:48:25,216 INFO    StreamThr :29400 [internal.py:wandb_internal():86] W&B internal server running at pid: 29400, started at: 2024-01-18 16:48:25.216985
+2024-01-18 16:48:25,216 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status
+2024-01-18 16:48:25,222 INFO    WriterThread:29400 [datastore.py:open_for_write():85] open: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\run-1lwbln0o.wandb
+2024-01-18 16:48:25,223 DEBUG   SenderThread:29400 [sender.py:send():380] send: header
+2024-01-18 16:48:25,248 DEBUG   SenderThread:29400 [sender.py:send():380] send: run
+2024-01-18 16:48:26,072 INFO    SenderThread:29400 [dir_watcher.py:__init__():211] watching files in: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files
+2024-01-18 16:48:26,084 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: check_version
+2024-01-18 16:48:26,092 INFO    SenderThread:29400 [sender.py:_start_run_threads():1122] run started: 1lwbln0o with start time 1705567705.216985
+2024-01-18 16:48:26,092 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: check_version
+2024-01-18 16:48:26,674 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: run_start
+2024-01-18 16:48:26,703 DEBUG   HandlerThread:29400 [system_info.py:__init__():32] System info init
+2024-01-18 16:48:26,703 DEBUG   HandlerThread:29400 [system_info.py:__init__():47] System info init done
+2024-01-18 16:48:26,703 INFO    HandlerThread:29400 [system_monitor.py:start():194] Starting system monitor
+2024-01-18 16:48:26,703 INFO    SystemMonitor:29400 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-18 16:48:26,703 INFO    HandlerThread:29400 [system_monitor.py:probe():214] Collecting system info
+2024-01-18 16:48:26,703 INFO    SystemMonitor:29400 [interfaces.py:start():190] Started cpu monitoring
+2024-01-18 16:48:26,703 INFO    SystemMonitor:29400 [interfaces.py:start():190] Started disk monitoring
+2024-01-18 16:48:26,703 INFO    SystemMonitor:29400 [interfaces.py:start():190] Started gpu monitoring
+2024-01-18 16:48:26,703 INFO    SystemMonitor:29400 [interfaces.py:start():190] Started memory monitoring
+2024-01-18 16:48:26,720 INFO    SystemMonitor:29400 [interfaces.py:start():190] Started network monitoring
+2024-01-18 16:48:26,728 DEBUG   HandlerThread:29400 [system_info.py:probe():196] Probing system
+2024-01-18 16:48:26,729 DEBUG   HandlerThread:29400 [system_info.py:_probe_git():181] Probing git
+2024-01-18 16:48:26,803 DEBUG   HandlerThread:29400 [system_info.py:_probe_git():189] Probing git done
+2024-01-18 16:48:26,803 DEBUG   HandlerThread:29400 [system_info.py:probe():244] Probing system done
+2024-01-18 16:48:26,803 DEBUG   HandlerThread:29400 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.9.16', 'heartbeatAt': '2024-01-18T08:48:26.729131', 'startedAt': '2024-01-18T08:48:25.202809', 'docker': None, 'cuda': None, 'args': ('--pretrained_model_name_or_path=timbrooks/instruct-pix2pix', '--dataset_name=annyorange/Text-style-dataset', '--use_ema', '--enable_xformers_memory_efficient_attention', '--resolution=256', '--random_flip', '--train_batch_size=4', '--gradient_accumulation_steps=4', '--gradient_checkpointing', '--max_train_steps=5', '--checkpointing_steps=15', '--checkpoints_total_limit=2', '--learning_rate=5e-06', '--lr_warmup_steps=0', '--mixed_precision=fp16', '--val_image_url=https://github.com/AnnyOrange/picture/blob/main/init.png?raw=true', '--val_gt_url=https://github.com/AnnyOrange/picture/blob/main/style.png?raw=true', '--validation_prompt=Convert the text in the picture to running script style.', '--seed=42', '--output_dir=text-finetuned', '--report_to=wandb', '--push_to_hub'), 'state': 'running', 'program': 'D:\\AI\\text-re\\text-generation\\finetune_instruct_pix2pix.py', 'codePathLocal': 'finetune_instruct_pix2pix.py', 'codePath': 'finetune_instruct_pix2pix.py', 'git': {'remote': 'https://github.com/AnnyOrange/text-generation.git', 'commit': '7b49bca065bd2a0d2d7e192f5dcfb5b887ca5aaf'}, 'email': '3066178638@qq.com', 'root': 'D:/AI/text-re/text-generation', 'host': 'xuzijingAnny', 'username': '30661', 'executable': 'C:\\Users\\30661\\.conda\\envs\\torchgpu\\python.exe', 'cpu_count': 16, 'cpu_count_logical': 24, 'cpu_freq': {'current': 2000.0, 'min': 0.0, 'max': 2000.0}, 'cpu_freq_per_core': [{'current': 2000.0, 'min': 0.0, 'max': 2000.0}], 'disk': {'/': {'total': 703.8626136779785, 'used': 73.36824417114258}}, 'gpu': 'NVIDIA GeForce RTX 3080 Ti Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3080 Ti Laptop GPU', 'memory_total': 17179869184}], 'memory': {'total': 31.675430297851562}}
+2024-01-18 16:48:26,803 INFO    HandlerThread:29400 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-18 16:48:26,803 INFO    HandlerThread:29400 [system_monitor.py:probe():227] Publishing system info
+2024-01-18 16:48:26,803 DEBUG   HandlerThread:29400 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2024-01-18 16:48:26,803 DEBUG   HandlerThread:29400 [system_info.py:_save_pip():68] Saving pip packages done
+2024-01-18 16:48:26,804 DEBUG   HandlerThread:29400 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2024-01-18 16:48:27,111 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\conda-environment.yaml
+2024-01-18 16:48:27,111 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\requirements.txt
+2024-01-18 16:48:31,525 DEBUG   HandlerThread:29400 [system_info.py:_save_conda():87] Saving conda packages done
+2024-01-18 16:48:31,545 INFO    HandlerThread:29400 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-18 16:48:31,545 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:48:31,545 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:48:31,545 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2024-01-18 16:48:31,556 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:48:31,556 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:48:31,556 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:48:31,910 DEBUG   SenderThread:29400 [sender.py:send():380] send: telemetry
+2024-01-18 16:48:31,910 DEBUG   SenderThread:29400 [sender.py:send():380] send: config
+2024-01-18 16:48:32,122 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\conda-environment.yaml
+2024-01-18 16:48:32,123 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-metadata.json
+2024-01-18 16:48:32,123 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:32,839 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\tn2z6i00-wandb-metadata.json
+2024-01-18 16:48:34,136 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:35,823 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:48:36,142 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:38,151 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:40,162 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:40,959 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:48:42,171 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:44,191 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:46,076 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:48:46,551 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:48:46,552 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:48:46,552 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:48:47,216 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:47,298 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:48:47,298 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:48:47,298 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_0_fd591d1383f80bded795.png with policy now
+2024-01-18 16:48:47,298 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:48:47,301 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:48:47,301 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:48:47,301 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:48:47,301 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:48:47,301 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:48:47,301 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:48:47,301 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:48:47,301 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:48:47,301 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:48:47,301 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:48:47,955 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\07g7zh5y-media/images/image_0_fd591d1383f80bded795.png
+2024-01-18 16:48:48,220 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:48:48,220 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_0_fd591d1383f80bded795.png
+2024-01-18 16:48:48,220 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media
+2024-01-18 16:48:48,220 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:48:48,954 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\dqh2ql2h-media/images/image_0_fd591d1383f80bded795.png
+2024-01-18 16:48:50,231 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:51,110 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:48:52,244 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:55,274 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:48:55,726 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:48:55,726 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_3_877585a556d6d281f32a.png with policy now
+2024-01-18 16:48:55,726 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:48:55,726 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:48:55,726 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:48:55,726 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:48:55,726 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:48:55,726 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:48:55,726 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:48:55,726 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:48:55,741 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:48:55,741 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:48:55,741 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:48:55,741 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:48:56,280 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:48:56,280 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_3_877585a556d6d281f32a.png
+2024-01-18 16:48:56,281 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:48:56,362 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\ec4p1uio-media/images/image_3_877585a556d6d281f32a.png
+2024-01-18 16:48:56,750 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:48:57,077 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\7uk5f25q-media/images/image_3_877585a556d6d281f32a.png
+2024-01-18 16:48:57,286 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\config.yaml
+2024-01-18 16:49:01,561 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:49:01,562 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:49:01,562 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:49:02,322 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:49:02,919 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:07,965 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:11,248 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:49:12,412 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:49:13,078 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:14,436 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:49:16,443 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:49:16,672 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:49:16,672 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:49:16,672 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:49:18,466 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:49:18,868 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:21,498 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:49:24,486 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:26,741 DEBUG   SystemMonitor:29400 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-18 16:49:26,741 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:49:29,768 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:31,675 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:49:31,675 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:49:31,691 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:49:35,000 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:38,531 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:49:38,531 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_6_147d4cef047798c95f29.png with policy now
+2024-01-18 16:49:38,531 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:49:38,531 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:49:38,531 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:49:38,531 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:49:38,531 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:49:38,531 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:49:38,531 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:49:38,531 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:49:38,535 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:49:38,535 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:49:38,535 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:49:38,535 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:49:38,646 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:49:38,646 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_6_147d4cef047798c95f29.png
+2024-01-18 16:49:38,646 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:49:39,154 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\b84qv7xp-media/images/image_6_147d4cef047798c95f29.png
+2024-01-18 16:49:39,882 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\2h217qqz-media/images/image_6_147d4cef047798c95f29.png
+2024-01-18 16:49:40,549 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:45,581 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:46,690 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:49:46,690 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:49:46,708 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:49:51,008 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:56,042 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:49:56,749 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:49:58,778 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:50:01,435 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:01,714 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:50:01,714 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:50:01,714 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:50:02,794 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:50:04,815 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:50:07,308 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:07,838 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:50:12,342 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:16,717 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:50:16,717 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:50:16,717 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:50:17,990 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:23,022 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:23,165 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:50:23,165 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_9_2a8e54f581387671b53d.png with policy now
+2024-01-18 16:50:23,165 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:50:23,165 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:50:23,165 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:50:23,165 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:50:23,165 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:50:23,165 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:50:23,165 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:50:23,165 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:50:23,165 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:50:23,165 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:50:23,165 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:50:23,165 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:50:23,783 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\fooporaj-media/images/image_9_2a8e54f581387671b53d.png
+2024-01-18 16:50:23,921 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:50:23,921 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_9_2a8e54f581387671b53d.png
+2024-01-18 16:50:23,921 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:50:24,626 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\izjwcyln-media/images/image_9_2a8e54f581387671b53d.png
+2024-01-18 16:50:26,751 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:50:28,754 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:31,725 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:50:31,725 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:50:31,725 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:50:34,055 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:39,079 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:44,592 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:45,035 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:50:46,732 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:50:46,732 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:50:46,732 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:50:47,060 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:50:49,074 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:50:50,106 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:52,102 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:50:55,143 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:50:56,752 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:51:00,768 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:01,734 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:51:01,744 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:51:01,744 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:51:06,138 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:07,801 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:51:07,802 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:51:07,802 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:51:07,802 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:51:07,803 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_12_d66e17caea869def6d80.png with policy now
+2024-01-18 16:51:07,803 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:51:07,804 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:51:07,804 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:51:07,804 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:51:07,804 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:51:07,805 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:51:07,805 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:51:07,805 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:51:07,806 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:51:08,218 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:51:08,218 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_12_d66e17caea869def6d80.png
+2024-01-18 16:51:08,219 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:51:08,496 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\gk1b47rx-media/images/image_12_d66e17caea869def6d80.png
+2024-01-18 16:51:09,287 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\k9ykqelm-media/images/image_12_d66e17caea869def6d80.png
+2024-01-18 16:51:11,843 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:16,738 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:51:16,738 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:51:16,739 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:51:17,585 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:22,632 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:26,761 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:51:27,280 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:51:28,007 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:29,433 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:51:31,749 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:51:31,749 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:51:31,749 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:51:33,214 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:33,474 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:51:35,488 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:51:37,519 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:51:38,855 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:40,542 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:51:43,883 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:46,757 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:51:46,757 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:51:46,757 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:51:49,125 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:54,153 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:51:55,303 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:51:55,303 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_15_2765598fb22442f73607.png with policy now
+2024-01-18 16:51:55,303 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:51:55,303 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:51:55,303 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:51:55,303 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:51:55,303 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:51:55,313 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:51:55,313 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:51:55,313 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:51:55,313 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:51:55,313 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:51:55,313 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:51:55,313 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:51:55,615 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:51:55,615 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_15_2765598fb22442f73607.png
+2024-01-18 16:51:55,615 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:51:56,020 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\6seont4c-media/images/image_15_2765598fb22442f73607.png
+2024-01-18 16:51:56,731 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\tp31vzzy-media/images/image_15_2765598fb22442f73607.png
+2024-01-18 16:51:56,762 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:51:59,771 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:01,757 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:52:01,757 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:52:01,768 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:52:05,099 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:10,123 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:15,566 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:16,739 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:52:16,759 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:52:16,759 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:52:16,770 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:52:18,754 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:52:20,696 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:20,762 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:52:22,773 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:52:25,802 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:52:25,892 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:26,771 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:52:31,765 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:52:31,765 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:52:31,775 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:52:32,132 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:37,152 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:37,511 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:52:37,511 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_18_201c6f650aad4c2dea12.png with policy now
+2024-01-18 16:52:37,511 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:52:37,511 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:52:37,511 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:52:37,511 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:52:37,511 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:52:37,514 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:52:37,514 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:52:37,514 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:52:37,515 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:52:37,515 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:52:37,515 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:52:37,515 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:52:37,872 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:52:37,872 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_18_201c6f650aad4c2dea12.png
+2024-01-18 16:52:37,872 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:52:38,114 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\9bv4bw01-media/images/image_18_201c6f650aad4c2dea12.png
+2024-01-18 16:52:38,800 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\wrk5i35x-media/images/image_18_201c6f650aad4c2dea12.png
+2024-01-18 16:52:38,874 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:52:42,552 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:46,777 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:52:46,777 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:52:46,777 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:52:48,085 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:53,102 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:56,773 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:52:58,914 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:52:58,975 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:00,980 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:01,774 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:53:01,774 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:53:01,790 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:53:02,995 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:04,615 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:06,017 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:10,473 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:15,502 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:16,783 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:53:16,783 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:53:16,793 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:53:18,532 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:53:18,532 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_21_201c6f650aad4c2dea12.png with policy now
+2024-01-18 16:53:18,532 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:53:18,532 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:53:18,532 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:53:18,532 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:53:18,537 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:53:18,537 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:53:18,538 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:53:18,538 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:53:18,538 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:53:18,538 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:53:18,539 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:53:18,539 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:53:19,086 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:53:19,086 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:19,086 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_21_201c6f650aad4c2dea12.png
+2024-01-18 16:53:19,086 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:53:19,159 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\7xsnrimd-media/images/image_21_201c6f650aad4c2dea12.png
+2024-01-18 16:53:19,853 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\e66nfdeb-media/images/image_21_201c6f650aad4c2dea12.png
+2024-01-18 16:53:20,554 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:25,575 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:26,781 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:53:30,817 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:31,779 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:53:31,779 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:53:31,789 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:53:36,111 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:37,439 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:53:39,204 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:41,219 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:41,581 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:43,228 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:45,253 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:46,620 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:46,802 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:53:46,802 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:53:46,802 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:53:48,275 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:49,284 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:53:52,218 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:53:56,802 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:53:57,808 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:00,036 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:54:00,036 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:54:00,036 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:54:00,036 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_24_d7800190f5c14cbed8ce.png with policy now
+2024-01-18 16:54:00,045 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:54:00,045 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:54:00,045 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:54:00,045 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:54:00,045 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:54:00,045 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:54:00,045 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:54:00,045 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:54:00,045 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:54:00,045 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:54:00,360 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:54:00,360 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_24_d7800190f5c14cbed8ce.png
+2024-01-18 16:54:00,360 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:54:00,785 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\0tjsqp15-media/images/image_24_d7800190f5c14cbed8ce.png
+2024-01-18 16:54:01,483 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\1b3f7bok-media/images/image_24_d7800190f5c14cbed8ce.png
+2024-01-18 16:54:01,809 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:54:01,809 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:54:01,810 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:54:03,169 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:08,191 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:13,217 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:16,811 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:54:16,821 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:54:16,821 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:54:19,213 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:21,478 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:54:23,492 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:54:24,317 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:25,502 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:54:26,809 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:54:27,509 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:54:29,367 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:30,525 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:54:31,818 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:54:31,828 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:54:31,828 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:54:35,115 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:40,141 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:41,930 DEBUG   SenderThread:29400 [sender.py:send():380] send: files
+2024-01-18 16:54:41,930 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file media\images\image_27_201c6f650aad4c2dea12.png with policy now
+2024-01-18 16:54:41,930 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:54:41,930 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:54:41,930 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-18 16:54:41,930 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:54:41,930 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:54:41,934 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:54:41,934 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:54:41,935 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:54:41,936 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:54:41,936 DEBUG   SenderThread:29400 [sender.py:send():380] send: history
+2024-01-18 16:54:41,936 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: summary_record
+2024-01-18 16:54:41,937 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:54:42,572 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\cl3y877s-media/images/image_27_201c6f650aad4c2dea12.png
+2024-01-18 16:54:42,587 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:54:42,587 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_created():271] file/dir created: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_27_201c6f650aad4c2dea12.png
+2024-01-18 16:54:42,587 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images
+2024-01-18 16:54:43,317 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file C:\Users\30661\AppData\Local\Temp\tmpgng1j51gwandb\ig8mdv2h-media/images/image_27_201c6f650aad4c2dea12.png
+2024-01-18 16:54:43,591 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:54:45,978 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:46,820 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:54:46,840 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:54:46,840 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:54:51,158 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:56,171 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:54:56,811 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:55:01,522 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:01,825 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:55:01,845 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:55:01,845 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:55:03,698 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:55:05,709 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:55:06,998 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:07,715 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:55:09,730 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:55:12,066 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:16,836 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:55:16,852 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:55:16,853 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:55:17,221 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:22,258 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:26,821 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:55:27,822 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:31,841 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:55:31,857 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 16:55:31,857 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: stop_status
+2024-01-18 16:55:33,160 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:38,208 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:38,764 DEBUG   SenderThread:29400 [sender.py:send():380] send: exit
+2024-01-18 16:55:38,764 INFO    SenderThread:29400 [sender.py:send_exit():585] handling exit code: 1
+2024-01-18 16:55:38,764 INFO    SenderThread:29400 [sender.py:send_exit():587] handling runtime: 432
+2024-01-18 16:55:38,765 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:55:38,765 INFO    SenderThread:29400 [sender.py:send_exit():593] send defer
+2024-01-18 16:55:38,765 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:38,765 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-18 16:55:38,765 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:38,765 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-01-18 16:55:38,765 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 1
+2024-01-18 16:55:38,765 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:38,765 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-18 16:55:38,766 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:38,766 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-01-18 16:55:38,766 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 2
+2024-01-18 16:55:38,766 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:38,766 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-18 16:55:38,766 INFO    HandlerThread:29400 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-18 16:55:38,766 INFO    HandlerThread:29400 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-18 16:55:38,766 DEBUG   SystemMonitor:29400 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-18 16:55:38,766 DEBUG   SystemMonitor:29400 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-18 16:55:38,773 INFO    HandlerThread:29400 [interfaces.py:finish():202] Joined disk monitor
+2024-01-18 16:55:38,813 INFO    HandlerThread:29400 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-18 16:55:38,813 INFO    HandlerThread:29400 [interfaces.py:finish():202] Joined memory monitor
+2024-01-18 16:55:38,813 INFO    HandlerThread:29400 [interfaces.py:finish():202] Joined network monitor
+2024-01-18 16:55:38,814 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:38,814 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-01-18 16:55:38,814 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 3
+2024-01-18 16:55:38,814 DEBUG   SenderThread:29400 [sender.py:send():380] send: stats
+2024-01-18 16:55:38,814 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:38,814 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-18 16:55:38,814 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:38,814 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-01-18 16:55:38,814 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 4
+2024-01-18 16:55:38,815 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:38,815 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-18 16:55:38,815 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:38,815 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-01-18 16:55:38,815 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 5
+2024-01-18 16:55:38,815 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:38,815 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-18 16:55:38,815 DEBUG   SenderThread:29400 [sender.py:send():380] send: summary
+2024-01-18 16:55:38,816 INFO    SenderThread:29400 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-18 16:55:38,816 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:38,816 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-01-18 16:55:38,816 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 6
+2024-01-18 16:55:38,816 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:38,816 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-18 16:55:38,816 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:38,816 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-01-18 16:55:38,816 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 7
+2024-01-18 16:55:38,817 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 16:55:38,817 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:38,817 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-18 16:55:38,817 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:38,817 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-01-18 16:55:38,937 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:55:39,821 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 16:55:39,947 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:55:40,363 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 8
+2024-01-18 16:55:40,363 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: poll_exit
+2024-01-18 16:55:40,363 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:40,363 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-18 16:55:40,363 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:40,363 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-01-18 16:55:40,363 INFO    SenderThread:29400 [job_builder.py:build():281] Attempting to build job artifact
+2024-01-18 16:55:40,363 INFO    SenderThread:29400 [job_builder.py:_get_source_type():393] is repo sourced job
+2024-01-18 16:55:40,369 INFO    SenderThread:29400 [job_builder.py:build():369] adding wandb-job metadata file
+2024-01-18 16:55:40,381 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 9
+2024-01-18 16:55:40,381 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:40,381 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-18 16:55:40,381 DEBUG   SenderThread:29400 [sender.py:send():380] send: artifact
+2024-01-18 16:55:40,830 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 16:55:40,950 INFO    Thread-16 :29400 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:55:41,787 INFO    SenderThread:29400 [sender.py:send_artifact():1456] sent artifact job-https___github.com_AnnyOrange_text-generation.git_finetune_instruct_pix2pix.py - {'id': 'QXJ0aWZhY3Q6Njk0OTUwMTUz', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzMTQxNDI0OQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Njk0OTUwMTUz', 'versionIndex': 1}}}
+2024-01-18 16:55:41,787 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:41,787 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-01-18 16:55:41,787 INFO    SenderThread:29400 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-18 16:55:41,965 INFO    SenderThread:29400 [dir_watcher.py:finish():388] scan: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files
+2024-01-18 16:55:41,965 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\conda-environment.yaml conda-environment.yaml
+2024-01-18 16:55:41,965 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\config.yaml config.yaml
+2024-01-18 16:55:41,965 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log output.log
+2024-01-18 16:55:41,965 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\requirements.txt requirements.txt
+2024-01-18 16:55:41,965 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-metadata.json wandb-metadata.json
+2024-01-18 16:55:41,969 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json wandb-summary.json
+2024-01-18 16:55:41,973 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_0_fd591d1383f80bded795.png media/images/image_0_fd591d1383f80bded795.png
+2024-01-18 16:55:41,974 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_12_d66e17caea869def6d80.png media/images/image_12_d66e17caea869def6d80.png
+2024-01-18 16:55:41,974 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_15_2765598fb22442f73607.png media/images/image_15_2765598fb22442f73607.png
+2024-01-18 16:55:41,974 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_18_201c6f650aad4c2dea12.png media/images/image_18_201c6f650aad4c2dea12.png
+2024-01-18 16:55:41,974 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_21_201c6f650aad4c2dea12.png media/images/image_21_201c6f650aad4c2dea12.png
+2024-01-18 16:55:41,974 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_24_d7800190f5c14cbed8ce.png media/images/image_24_d7800190f5c14cbed8ce.png
+2024-01-18 16:55:41,974 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_27_201c6f650aad4c2dea12.png media/images/image_27_201c6f650aad4c2dea12.png
+2024-01-18 16:55:41,976 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_3_877585a556d6d281f32a.png media/images/image_3_877585a556d6d281f32a.png
+2024-01-18 16:55:41,976 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_6_147d4cef047798c95f29.png media/images/image_6_147d4cef047798c95f29.png
+2024-01-18 16:55:41,976 INFO    SenderThread:29400 [dir_watcher.py:finish():402] scan save: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\media\images\image_9_2a8e54f581387671b53d.png media/images/image_9_2a8e54f581387671b53d.png
+2024-01-18 16:55:41,977 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 10
+2024-01-18 16:55:41,977 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: poll_exit
+2024-01-18 16:55:41,977 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:41,978 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-18 16:55:41,978 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:41,978 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-01-18 16:55:41,978 INFO    SenderThread:29400 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-18 16:55:42,556 INFO    wandb-upload_1:29400 [upload_job.py:push():131] Uploaded file D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\config.yaml
+2024-01-18 16:55:42,757 INFO    wandb-upload_0:29400 [upload_job.py:push():131] Uploaded file D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\conda-environment.yaml
+2024-01-18 16:55:42,934 INFO    wandb-upload_3:29400 [upload_job.py:push():131] Uploaded file D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\requirements.txt
+2024-01-18 16:55:42,956 INFO    wandb-upload_4:29400 [upload_job.py:push():131] Uploaded file D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\wandb-summary.json
+2024-01-18 16:55:43,030 INFO    wandb-upload_2:29400 [upload_job.py:push():131] Uploaded file D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\files\output.log
+2024-01-18 16:55:43,245 INFO    Thread-15 :29400 [sender.py:transition_state():613] send defer: 11
+2024-01-18 16:55:43,246 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:43,246 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-18 16:55:43,246 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:43,246 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-01-18 16:55:43,246 INFO    SenderThread:29400 [file_pusher.py:join():181] waiting for file pusher
+2024-01-18 16:55:43,246 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 12
+2024-01-18 16:55:43,246 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:43,246 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-18 16:55:43,246 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:43,246 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-01-18 16:55:43,246 INFO    SenderThread:29400 [file_stream.py:finish():595] file stream finish called
+2024-01-18 16:55:44,067 INFO    SenderThread:29400 [file_stream.py:finish():599] file stream finish is done
+2024-01-18 16:55:44,067 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 13
+2024-01-18 16:55:44,067 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:44,067 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-18 16:55:44,067 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:44,067 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-01-18 16:55:44,067 INFO    SenderThread:29400 [sender.py:transition_state():613] send defer: 14
+2024-01-18 16:55:44,067 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: defer
+2024-01-18 16:55:44,067 INFO    HandlerThread:29400 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-18 16:55:44,067 DEBUG   SenderThread:29400 [sender.py:send():380] send: final
+2024-01-18 16:55:44,067 DEBUG   SenderThread:29400 [sender.py:send():380] send: footer
+2024-01-18 16:55:44,067 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: defer
+2024-01-18 16:55:44,067 INFO    SenderThread:29400 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-01-18 16:55:44,067 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-18 16:55:44,067 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: server_info
+2024-01-18 16:55:44,067 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-18 16:55:44,067 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-18 16:55:44,067 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 16:55:44,067 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: poll_exit
+2024-01-18 16:55:44,067 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: server_info
+2024-01-18 16:55:44,067 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: job_info
+2024-01-18 16:55:44,363 DEBUG   SenderThread:29400 [sender.py:send_request():407] send_request: job_info
+2024-01-18 16:55:44,363 INFO    MainThread:29400 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2024-01-18 16:55:44,363 INFO    MainThread:29400 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2024-01-18 16:55:44,363 INFO    MainThread:29400 [wandb_run.py:_footer_sync_info():3558] logging synced files
+2024-01-18 16:55:44,363 DEBUG   HandlerThread:29400 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-18 16:55:44,363 INFO    HandlerThread:29400 [handler.py:finish():866] shutting down handler
+2024-01-18 16:55:45,073 INFO    WriterThread:29400 [datastore.py:close():294] close: D:\AI\text-re\text-generation\wandb\run-20240118_164825-1lwbln0o\run-1lwbln0o.wandb
+2024-01-18 16:55:45,379 INFO    SenderThread:29400 [sender.py:finish():1534] shutting down sender
+2024-01-18 16:55:45,379 INFO    SenderThread:29400 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-18 16:55:45,379 INFO    SenderThread:29400 [file_pusher.py:join():181] waiting for file pusher

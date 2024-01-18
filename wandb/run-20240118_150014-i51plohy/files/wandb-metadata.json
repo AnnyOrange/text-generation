@@ -1,0 +1,76 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.9.16",
+    "heartbeatAt": "2024-01-18T07:00:16.427546",
+    "startedAt": "2024-01-18T07:00:14.745847",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--pretrained_model_name_or_path=timbrooks/instruct-pix2pix",
+        "--dataset_name=annyorange/Text-style-dataset",
+        "--use_ema",
+        "--enable_xformers_memory_efficient_attention",
+        "--resolution=256",
+        "--random_flip",
+        "--train_batch_size=4",
+        "--gradient_accumulation_steps=4",
+        "--gradient_checkpointing",
+        "--max_train_steps=5",
+        "--checkpointing_steps=15",
+        "--checkpoints_total_limit=2",
+        "--learning_rate=5e-06",
+        "--lr_warmup_steps=0",
+        "--mixed_precision=fp16",
+        "--val_image_url=https://github.com/AnnyOrange/picture/blob/main/init.png?raw=true",
+        "--val_gt_url=https://github.com/AnnyOrange/picture/blob/main/chgt.png?raw=true",
+        "--validation_prompt=Convert the text in the picture to running script style.",
+        "--seed=42",
+        "--output_dir=text-finetuned",
+        "--report_to=wandb",
+        "--push_to_hub"
+    ],
+    "state": "running",
+    "program": "D:\\AI\\text-re\\text-generation\\finetune_instruct_pix2pix.py",
+    "codePathLocal": "finetune_instruct_pix2pix.py",
+    "codePath": "finetune_instruct_pix2pix.py",
+    "git": {
+        "remote": "https://github.com/AnnyOrange/text-generation.git",
+        "commit": "7b49bca065bd2a0d2d7e192f5dcfb5b887ca5aaf"
+    },
+    "email": "3066178638@qq.com",
+    "root": "D:/AI/text-re/text-generation",
+    "host": "xuzijingAnny",
+    "username": "30661",
+    "executable": "C:\\Users\\30661\\.conda\\envs\\torchgpu\\python.exe",
+    "cpu_count": 16,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 2000.0,
+        "min": 0.0,
+        "max": 2000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2000.0,
+            "min": 0.0,
+            "max": 2000.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 703.8626136779785,
+            "used": 73.34246063232422
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3080 Ti Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3080 Ti Laptop GPU",
+            "memory_total": 17179869184
+        }
+    ],
+    "memory": {
+        "total": 31.675430297851562
+    }
+}

@@ -56,13 +56,13 @@ check_min_version("0.15.0.dev0")
 logger = get_logger(__name__, log_level="INFO")
 
 DATASET_NAME_MAPPING = {
-    "annyorange/colorized-dataset": (
-        "original_image",
+    "annyorange/Text-style-dataset": (
+        "init_image",
         "edit_prompt",
-        "colorized_image",
+        "style_image",
     ),
 }
-WANDB_TABLE_COL_NAMES = ["original_image", "edited_image", "edit_prompt"]
+WANDB_TABLE_COL_NAMES = ["init_image", "edited_image", "edit_prompt"]
 
 
 def parse_args():
@@ -110,15 +110,15 @@ def parse_args():
         ),
     )
     parser.add_argument(
-        "--original_image_column",
+        "--init_image_column",
         type=str,
-        default="original_image",
+        default="init_image",
         help="The column of the dataset containing the original image on which edits where made.",
     )
     parser.add_argument(
         "--edited_image_column",
         type=str,
-        default="colorized_image",
+        default="style_image",
         help="The column of the dataset containing the edited image.",
     )
     parser.add_argument(
@@ -163,7 +163,7 @@ def parse_args():
     parser.add_argument(
         "--max_train_samples",
         type=int,
-        default=766,
+        default=11,
         help=(
             "For debugging purposes or quicker training, truncate the number of training examples to this "
             "value if set."
@@ -336,7 +336,7 @@ def parse_args():
     parser.add_argument(
         "--hub_token",
         type=str,
-        default="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",
+        default=None,
         help="The token to use to push to the Model Hub.",
     )
     parser.add_argument(
@@ -700,15 +700,15 @@ def main():
 
     # 6. Get the column names for input/target.
     dataset_columns = DATASET_NAME_MAPPING.get(args.dataset_name, None)
-    if args.original_image_column is None:
-        original_image_column = (
+    if args.init_image_column is None:
+        init_image_column = (
             dataset_columns[0] if dataset_columns is not None else column_names[0]
         )
     else:
-        original_image_column = args.original_image_column
-        if original_image_column not in column_names:
+        init_image_column = args.init_image_column
+        if init_image_column not in column_names:
             raise ValueError(
-                f"--original_image_column' value '{args.original_image_column}' needs to be one of: {', '.join(column_names)}"
+                f"--init_image_column' value '{args.init_image_column}' needs to be one of: {', '.join(column_names)}"
             )
     if args.edit_prompt_column is None:
         edit_prompt_column = (
@@ -756,10 +756,10 @@ def main():
     )
 
     def preprocess_images(examples):
-        original_images = np.concatenate(
+        init_images = np.concatenate(
             [
                 convert_to_np(image, args.resolution)
-                for image in examples[original_image_column]
+                for image in examples[init_image_column]
             ]
         )
         edited_images = np.concatenate(
@@ -768,9 +768,9 @@ def main():
                 for image in examples[edited_image_column]
             ]
         )
-        # We need to ensure that the original and the edited images undergo the same
+        # We need to ensure that the init and the edited images undergo the same
         # augmentation transforms.
-        images = np.concatenate([original_images, edited_images])
+        images = np.concatenate([init_images, edited_images])
         images = torch.tensor(images)
         images = 2 * (images / 255) - 1
         return train_transforms(images)
@@ -781,14 +781,14 @@ def main():
         # Since the original and edited images were concatenated before
         # applying the transformations, we need to separate them and reshape
         # them accordingly.
-        original_images, edited_images = preprocessed_images.chunk(2)
-        original_images = original_images.reshape(
+        init_images, edited_images = preprocessed_images.chunk(2)
+        init_images = init_images.reshape(
             -1, 3, args.resolution, args.resolution
         )
         edited_images = edited_images.reshape(-1, 3, args.resolution, args.resolution)
 
         # Collate the preprocessed images into the `examples`.
-        examples["original_pixel_values"] = original_images
+        examples["init_pixel_values"] = init_images
         examples["edited_pixel_values"] = edited_images
 
         # Preprocess the captions.
@@ -815,10 +815,10 @@ def main():
         val_dataset = dataset["val"].with_transform(preprocess_train)
 
     def collate_fn(examples):
-        original_pixel_values = torch.stack(
-            [example["original_pixel_values"] for example in examples]
+        init_pixel_values = torch.stack(
+            [example["init_pixel_values"] for example in examples]
         )
-        original_pixel_values = original_pixel_values.to(
+        init_pixel_values = init_pixel_values.to(
             memory_format=torch.contiguous_format
         ).float()
         edited_pixel_values = torch.stack(
@@ -829,7 +829,7 @@ def main():
         ).float()
         input_ids = torch.stack([example["input_ids"] for example in examples])
         return {
-            "original_pixel_values": original_pixel_values,
+            "init_pixel_values": init_pixel_values,
             "edited_pixel_values": edited_pixel_values,
             "input_ids": input_ids,
         }
@@ -842,13 +842,13 @@ def main():
         batch_size=args.train_batch_size,
         num_workers=args.dataloader_num_workers,
     )
-    val_dataloader = torch.utils.data.DataLoader(
-        val_dataset,
-        shuffle=True,
-        collate_fn=collate_fn,
-        batch_size=args.val_batch_size,
-        num_workers=args.dataloader_num_workers,
-    )
+    # val_dataloader = torch.utils.data.DataLoader(
+    #     val_dataset,
+    #     shuffle=True,
+    #     collate_fn=collate_fn,
+    #     batch_size=args.val_batch_size,
+    #     num_workers=args.dataloader_num_workers,
+    # )
 
     # Scheduler and math around the number of training steps.
     overrode_max_train_steps = False
@@ -898,7 +898,7 @@ def main():
     # We need to initialize the trackers we use, and also store our configuration.
     # The trackers initializes automatically on the main process.
     if accelerator.is_main_process:
-        accelerator.init_trackers("instruct-pix2pix-colorizer", config=vars(args))
+        accelerator.init_trackers("instruct-pix2pix-text", config=vars(args))
 
     # Train!
     total_batch_size = (
@@ -997,8 +997,8 @@ def main():
 
                 # Get the additional image embedding for conditioning.
                 # Instead of getting a diagonal Gaussian here, we simply take the mode.
-                original_image_embeds = vae.encode(
-                    batch["original_pixel_values"].to(weight_dtype)
+                init_image_embeds = vae.encode(
+                    batch["init_pixel_values"].to(weight_dtype)
                 ).latent_dist.mode()
 
                 # Conditioning dropout to support classifier-free guidance during inference. For more details
@@ -1019,7 +1019,7 @@ def main():
                     )
 
                     # Sample masks for the original images.
-                    image_mask_dtype = original_image_embeds.dtype
+                    image_mask_dtype = init_image_embeds.dtype
                     image_mask = 1 - (
                         (random_p >= args.conditioning_dropout_prob).to(
                             image_mask_dtype
@@ -1030,11 +1030,11 @@ def main():
                     )
                     image_mask = image_mask.reshape(bsz, 1, 1, 1)
                     # Final image conditioning.
-                    original_image_embeds = image_mask * original_image_embeds
+                    init_image_embeds = image_mask * init_image_embeds
 
                 # Concatenate the `original_image_embeds` with the `noisy_latents`.
                 concatenated_noisy_latents = torch.cat(
-                    [noisy_latents, original_image_embeds], dim=1
+                    [noisy_latents, init_image_embeds], dim=1
                 )
 
                 # Get the target for loss depending on the prediction type
@@ -1115,7 +1115,7 @@ def main():
                     pipeline.set_progress_bar_config(disable=True)
 
                     # run inference
-                    original_image = download_image(args.val_image_url)
+                    init_image = download_image(args.val_image_url)
                     gt_image = download_image(args.val_gt_url)
                     edited_images = []
                     with torch.autocast(
@@ -1127,7 +1127,7 @@ def main():
                             edited_images.append(
                                 pipeline(
                                     args.validation_prompt,
-                                    image=original_image,
+                                    image=init_image,
                                     num_inference_steps=20,
                                     image_guidance_scale=1.5,
                                     guidance_scale=7,
