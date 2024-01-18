@@ -56,13 +56,13 @@ check_min_version("0.15.0.dev0")
 logger = get_logger(__name__, log_level="INFO")
 
 DATASET_NAME_MAPPING = {
-    "annyorange/Text-style-dataset": (
-        "init_image",
+    "annyorange/colorized-dataset": (
+        "original_image",
         "edit_prompt",
-        "style_image",
+        "colorized_image",
     ),
 }
-WANDB_TABLE_COL_NAMES = ["init_image", "edited_image", "edit_prompt"]
+WANDB_TABLE_COL_NAMES = ["original_image", "edited_image", "edit_prompt"]
 
 
 def parse_args():
@@ -118,7 +118,7 @@ def parse_args():
     parser.add_argument(
         "--edited_image_column",
         type=str,
-        default="style_image",
+        default="colorized_image",
         help="The column of the dataset containing the edited image.",
     )
     parser.add_argument(
@@ -336,7 +336,7 @@ def parse_args():
     parser.add_argument(
         "--hub_token",
         type=str,
-        default=None,
+        default="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",
         help="The token to use to push to the Model Hub.",
     )
     parser.add_argument(
@@ -898,7 +898,7 @@ def main():
     # We need to initialize the trackers we use, and also store our configuration.
     # The trackers initializes automatically on the main process.
     if accelerator.is_main_process:
-        accelerator.init_trackers("instruct-pix2pix-style", config=vars(args))
+        accelerator.init_trackers("instruct-pix2pix-colorizer", config=vars(args))
 
     # Train!
     total_batch_size = (

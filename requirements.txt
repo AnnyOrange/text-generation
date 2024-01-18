@@ -10,7 +10,6 @@ isort>=5.5.4
 ruff>=0.0.241,<=0.0.259
 tensorflow
 tensorflow_datasets==4.6.0
-datasets 
 huggingface_hub
 Pillow
 opencv-python

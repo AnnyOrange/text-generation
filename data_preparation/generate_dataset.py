@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description="Prepare a dataset for InstructPix2Pix style training."
     )
-    parser.add_argument("--data_root", type=str, default="./datasets_val", help="datasets_dir")
+    parser.add_argument("--data_root", type=str, default="./datasets", help="datasets_dir")
     args = parser.parse_args()
     return args
 

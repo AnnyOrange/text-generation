@@ -23,12 +23,11 @@ from datasets import Dataset, Features
 from datasets import Image as ImageFeature
 from datasets import Value
 
-DS_NAME = "Text-style-dataset"
-
+DS_NAME = "annyorange/text-style"
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data_root", type=str, default="Text-style-dataset")
+    parser.add_argument("--data_root", type=str, default="text-style")
     parser.add_argument("--instructions_path", type=str, default="prompt.txt")
     args = parser.parse_args()
     return args
@@ -60,8 +59,8 @@ def main(args):
     data_paths = [os.path.join(args.data_root, d) for d in data_paths]
     new_data_paths = []
     for data_path in data_paths:
-        init_image = os.path.join(data_path, "init_image.jpg")
-        style_image = os.path.join(data_path, "style_image.jpg")
+        init_image = os.path.join(data_path, "init_image.png")
+        style_image = os.path.join(data_path, "style_image.png")
         new_data_paths.append((init_image, style_image))
 
     generation_fn = generate_examples(new_data_paths, instructions)
