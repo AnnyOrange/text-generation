@@ -1,0 +1,55 @@
+01/19/2024 14:34:35 - INFO - __main__ - ***** Running training *****
+01/19/2024 14:34:35 - INFO - __main__ -   Num examples = 11
+01/19/2024 14:34:35 - INFO - __main__ -   Num Epochs = 5
+01/19/2024 14:34:35 - INFO - __main__ -   Instantaneous batch size per device = 1
+01/19/2024 14:34:35 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 4
+01/19/2024 14:34:35 - INFO - __main__ -   Gradient Accumulation steps = 4
+01/19/2024 14:34:35 - INFO - __main__ -   Total optimization steps = 15
+Steps:   0%|                                                                                                                                                      | 0/15 [00:00<?, ?it/s]C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\diffusers\configuration_utils.py:139: FutureWarning: Accessing config attribute `num_train_timesteps` directly via 'DDPMScheduler' object attribute is deprecated. Please access 'num_train_timesteps' over 'DDPMScheduler's config object instead, e.g. 'scheduler.config.num_train_timesteps'.
+  deprecate("direct config name access", "1.0.0", deprecation_message, standard_warn=False)
+We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+You may ignore this warning if your `pad_token_id` (0) is identical to the `bos_token_id` (0), `eos_token_id` (2), or the `sep_token_id` (None), and your input is not padded.
+Steps:   0%|                                                                                                                            | 0/15 [00:04<?, ?it/s, lr=5e-6, step_loss=0.167]C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\transformers\deepspeed.py:23: FutureWarning: transformers.deepspeed module is deprecated and will be removed in a future version. Please import deepspeed modules directly from transformers.integrations
+  warnings.warn(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  53%|█████████████████████████████████████████████████████████████▎                                                     | 8/15 [04:35<04:06, 35.25s/it, lr=5e-6, step_loss=0.0681]Traceback (most recent call last):
+  File "D:\AI\text-re\text-generation\finetune_pix2pix_text.py", line 1273, in <module>
+    main()
+  File "D:\AI\text-re\text-generation\finetune_pix2pix_text.py", line 1098, in main
+    ema_unet.step(unet.parameters())
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\torch\utils\_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\diffusers\training_utils.py", line 308, in step
+    s_param.sub_(one_minus_decay * (s_param - param))
+KeyboardInterrupt

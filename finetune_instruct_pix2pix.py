@@ -163,7 +163,7 @@ def parse_args():
     parser.add_argument(
         "--max_train_samples",
         type=int,
-        default=11,
+        default=275,
         help=(
             "For debugging purposes or quicker training, truncate the number of training examples to this "
             "value if set."

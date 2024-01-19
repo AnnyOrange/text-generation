@@ -1,0 +1,5 @@
+2024-01-18 18:13:29,471 INFO    StreamThr :17488 [internal.py:wandb_internal():86] W&B internal server running at pid: 17488, started at: 2024-01-18 18:13:29.470368
+2024-01-18 18:13:29,472 DEBUG   HandlerThread:17488 [handler.py:handle_request():146] handle_request: status
+2024-01-18 18:13:29,474 INFO    WriterThread:17488 [datastore.py:open_for_write():85] open: D:\AI\text-re\text-generation\wandb\run-20240118_181329-0yu48bby\run-0yu48bby.wandb
+2024-01-18 18:13:29,474 DEBUG   SenderThread:17488 [sender.py:send():380] send: header
+2024-01-18 18:13:29,501 DEBUG   SenderThread:17488 [sender.py:send():380] send: run

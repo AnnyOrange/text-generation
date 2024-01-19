@@ -1,0 +1,47 @@
+01/19/2024 11:17:55 - INFO - __main__ - ***** Running training *****
+01/19/2024 11:17:55 - INFO - __main__ -   Num examples = 11
+01/19/2024 11:17:55 - INFO - __main__ -   Num Epochs = 8
+01/19/2024 11:17:55 - INFO - __main__ -   Instantaneous batch size per device = 2
+01/19/2024 11:17:55 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 8
+01/19/2024 11:17:55 - INFO - __main__ -   Gradient Accumulation steps = 4
+01/19/2024 11:17:55 - INFO - __main__ -   Total optimization steps = 15
+Steps:   0%|                                                                                                                                                      | 0/15 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "D:\AI\text-re\text-generation\finetune_pix2pix_text.py", line 1264, in <module>
+    main()
+  File "D:\AI\text-re\text-generation\finetune_pix2pix_text.py", line 978, in main
+    for step, batch in enumerate(train_dataloader):
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\accelerate\data_loader.py", line 451, in __iter__
+    current_batch = next(dataloader_iter)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\torch\utils\data\dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\torch\utils\data\dataloader.py", line 674, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\torch\utils\data\_utils\fetch.py", line 49, in fetch
+    data = self.dataset.__getitems__(possibly_batched_index)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\datasets\arrow_dataset.py", line 2804, in __getitems__
+    batch = self.__getitem__(keys)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\datasets\arrow_dataset.py", line 2800, in __getitem__
+    return self._getitem(key)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\datasets\arrow_dataset.py", line 2785, in _getitem
+    formatted_output = format_table(
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\datasets\formatting\formatting.py", line 629, in format_table
+    return formatter(pa_table, query_type=query_type)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\datasets\formatting\formatting.py", line 400, in __call__
+    return self.format_batch(pa_table)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\datasets\formatting\formatting.py", line 515, in format_batch
+    return self.transform(batch)
+  File "D:\AI\text-re\text-generation\finetune_pix2pix_text.py", line 817, in preprocess_train
+    examples["input_ids"] = tokenize_captions(captions)
+  File "D:\AI\text-re\text-generation\finetune_pix2pix_text.py", line 756, in tokenize_captions
+    inputs = tokenizer(
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\transformers\tokenization_utils_base.py", line 2802, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\transformers\tokenization_utils_base.py", line 2888, in _call_one
+    return self.batch_encode_plus(
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\transformers\tokenization_utils_base.py", line 3079, in batch_encode_plus
+    return self._batch_encode_plus(
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\transformers\tokenization_utils_fast.py", line 496, in _batch_encode_plus
+    self.set_truncation_and_padding(
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\transformers\tokenization_utils_fast.py", line 451, in set_truncation_and_padding
+    self._tokenizer.enable_truncation(**target)
+OverflowError: int too big to convert

@@ -32,12 +32,19 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-
+#gbk
+# def load_instructions(instructions_path: str) -> List[str]:
+#     with open(instructions_path, "r") as f:
+#         instructions = f.readlines()
+#     instructions = [i.strip() for i in instructions]
+#     return instructions
+# 可以非asc码
 def load_instructions(instructions_path: str) -> List[str]:
-    with open(instructions_path, "r") as f:
+    with open(instructions_path, "r", encoding="utf-8") as f:
         instructions = f.readlines()
     instructions = [i.strip() for i in instructions]
     return instructions
+
 
 
 def generate_examples(data_paths: List[str], instructions: List[str]):
