@@ -1,0 +1,121 @@
+01/24/2024 08:50:11 - INFO - __main__ - ***** Running training *****
+01/24/2024 08:50:11 - INFO - __main__ -   Num examples = 275
+01/24/2024 08:50:11 - INFO - __main__ -   Num Epochs = 1
+01/24/2024 08:50:11 - INFO - __main__ -   Instantaneous batch size per device = 2
+01/24/2024 08:50:11 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 8
+01/24/2024 08:50:11 - INFO - __main__ -   Gradient Accumulation steps = 4
+01/24/2024 08:50:11 - INFO - __main__ -   Total optimization steps = 15
+Steps:   0%|                                                                                                                                                                                        | 0/15 [00:00<?, ?it/s]C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\diffusers\configuration_utils.py:139: FutureWarning: Accessing config attribute `num_train_timesteps` directly via 'DDPMScheduler' object attribute is deprecated. Please access 'num_train_timesteps' over 'DDPMScheduler's config object instead, e.g. 'scheduler.config.num_train_timesteps'.
+  deprecate("direct config name access", "1.0.0", deprecation_message, standard_warn=False)
+Steps:   0%|                                                                                                                                                              | 0/15 [00:07<?, ?it/s, lr=5e-6, step_loss=0.136]C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\transformers\deepspeed.py:23: FutureWarning: transformers.deepspeed module is deprecated and will be removed in a future version. Please import deepspeed modules directly from transformers.integrations
+  warnings.warn(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 15/15 [04:40<00:00, 19.15s/it, lr=5e-6, step_loss=0.00897]01/24/2024 08:54:51 - INFO - __main__ - Running validation...
+ Generating 1 images with prompt: Transform the text in the image into Anny's style with a white background..
+{'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                           `text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["bos_token_id"]` will be overriden.                                                         | 0/7 [00:00<?, ?it/s]
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["eos_token_id"]` will be overriden.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of timbrooks/instruct-pix2pix.
+                                                                                                                                                                                                                           {'rescale_betas_zero_snr', 'timestep_spacing'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as EulerAncestralDiscreteScheduler from `scheduler` subfolder of timbrooks/instruct-pix2pix.                                                                                | 1/7 [00:01<00:11,  1.97s/it]
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of timbrooks/instruct-pix2pix.
+Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of timbrooks/instruct-pix2pix.
+{'force_upcast', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+Loaded vae as AutoencoderKL from `vae` subfolder of timbrooks/instruct-pix2pix.
+                                                                                                                                                                                                                           Loaded text_encoder as CLIPTextModel from `text_encoder` subfolder of timbrooks/instruct-pix2pix.
+Loading pipeline components...: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:02<00:00,  2.68it/s]
+validate15 1
+{'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                                                                                           `text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["bos_token_id"]` will be overriden.                                                         | 0/7 [00:00<?, ?it/s]
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["eos_token_id"]` will be overriden.
+Loaded safety_checker as StableDiffusionSafetyChecker from `safety_checker` subfolder of timbrooks/instruct-pix2pix.
+                                                                                                                                                                                                                           {'rescale_betas_zero_snr', 'timestep_spacing'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as EulerAncestralDiscreteScheduler from `scheduler` subfolder of timbrooks/instruct-pix2pix.                                                                                | 1/7 [00:00<00:02,  2.37it/s]
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of timbrooks/instruct-pix2pix.
+Loaded tokenizer as CLIPTokenizer from `tokenizer` subfolder of timbrooks/instruct-pix2pix.
+Loading pipeline components...: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 14.57it/s]
+Configuration saved in text-finetuned\vae\config.json
+Model weights saved in text-finetuned\vae\diffusion_pytorch_model.safetensors
+Configuration saved in text-finetuned\unet\config.json
+Model weights saved in text-finetuned\unet\diffusion_pytorch_model.safetensors
+Configuration saved in text-finetuned\scheduler\scheduler_config.json
+Configuration saved in text-finetuned\model_index.json
+Traceback (most recent call last):
+  File "D:\AI\text-re\text-generation\finetune_instruct_pix2pix.py", line 1246, in <module>
+    main()
+  File "D:\AI\text-re\text-generation\finetune_instruct_pix2pix.py", line 1238, in main
+    repo.push_to_hub(
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\huggingface_hub\repository.py", line 1322, in push_to_hub
+    self.git_add(auto_lfs_track=True)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\huggingface_hub\repository.py", line 1035, in git_add
+    result = run_subprocess("git add -v".split() + [pattern], self.local_dir)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\site-packages\huggingface_hub\utils\_subprocess.py", line 83, in run_subprocess
+    return subprocess.run(
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\subprocess.py", line 1134, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\subprocess.py", line 1508, in _communicate
+    self.stdout_thread.join(self._remaining_time(endtime))
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\threading.py", line 1060, in join
+    self._wait_for_tstate_lock()
+  File "C:\Users\30661\.conda\envs\torchgpu\lib\threading.py", line 1080, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+KeyboardInterrupt

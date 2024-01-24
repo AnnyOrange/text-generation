@@ -343,7 +343,7 @@ def parse_args():
     parser.add_argument(
         "--hub_token",
         type=str,
-        default=None,
+        default="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",
         help="The token to use to push to the Model Hub.",
     )
     parser.add_argument(
@@ -588,18 +588,19 @@ def main():
 
     # Freeze vae and text_encoder
     vae.requires_grad_(False)
+    unet.requires_grad_(False)
     # text_encoder.requires_grad_(False)
     # unet.requires_grad_(False)
 
     # Create EMA for the unet.
     # print(args.use_ema)
-    if args.use_ema:
-        ema_unet = EMAModel(
-            unet.parameters(), model_cls=UNet2DConditionModel, model_config=unet.config
-        )
+    # if args.use_ema:
+    #     ema_unet = EMAModel(
+    #         unet.parameters(), model_cls=UNet2DConditionModel, model_config=unet.config
+    #     )
     if args.use_ema:
         ema_text_encoder = EMAModel(
-            text_encoder.parameters(),model_cls=ChineseCLIPTextModel, model_config=text_encoder.config
+            text_encoder.parameters(),model_cls=CLIPTextModel, model_config=text_encoder.config
         )
     if args.enable_xformers_memory_efficient_attention:
         if is_xformers_available():
@@ -610,7 +611,8 @@ def main():
                 logger.warn(
                     "xFormers 0.0.16 cannot be used for training in some GPUs. If you observe problems during training, please update xFormers to at least 0.0.17. See https://huggingface.co/docs/diffusers/main/en/optimization/xformers for more details."
                 )
-            unet.enable_xformers_memory_efficient_attention()
+            text_encoder.enable_xformers_memory_efficient_attention()
+            # unet.enable_xformers_memory_efficient_attention()
         else:
             raise ValueError(
                 "xformers is not available. Make sure it is installed correctly"
@@ -622,11 +624,11 @@ def main():
         def save_model_hook(models, weights, output_dir):
             if args.use_ema:
                 ema_text_encoder.save_pretrained(os.path.join(output_dir, "text_encoder_ema"))
-                ema_unet.save_pretrained(os.path.join(output_dir, "unet_ema"))
+                # ema_unet.save_pretrained(os.path.join(output_dir, "unet_ema"))
 
             for i, model in enumerate(models):
                 model.save_pretrained(os.path.join(output_dir, "text_encoder"))
-                model.save_pretrained(os.path.join(output_dir, "unet"))
+                # model.save_pretrained(os.path.join(output_dir, "unet"))
 
                 # make sure to pop weight so that corresponding model is not saved again
                 weights.pop()
@@ -634,15 +636,15 @@ def main():
         def load_model_hook(models, input_dir):
             if args.use_ema:
                 load_model = EMAModel.from_pretrained(
-                    os.path.join(input_dir, "text_encoder_ema", ChineseCLIPTextModel)
+                    os.path.join(input_dir, "text_encoder_ema", CLIPTextModel)
                 )
-                load_model = EMAModel.from_pretrained(
-                    os.path.join(input_dir, "unet_ema"), UNet2DConditionModel
-                )
+                # load_model = EMAModel.from_pretrained(
+                #     os.path.join(input_dir, "unet_ema"), UNet2DConditionModel
+                # )
                 ema_text_encoder.load_state_dict(load_model.state_dict())
                 ema_text_encoder.to(accelerator.device)
-                ema_unet.load_state_dict(load_model.state_dict())
-                ema_unet.to(accelerator.device)
+                # ema_unet.load_state_dict(load_model.state_dict())
+                # ema_unet.to(accelerator.device)
                 del load_model
 
             for i in range(len(models)):
@@ -650,12 +652,12 @@ def main():
                 model = models.pop()
 
                 # load diffusers style into model
-                load_model= ChineseCLIPTextModel.from_pretrained(
+                load_model= CLIPTextModel.from_pretrained(
                     input_dir
                 )
-                load_model = UNet2DConditionModel.from_pretrained(
-                    input_dir, subfolder="unet"
-                )
+                # load_model = UNet2DConditionModel.from_pretrained(
+                #     input_dir, subfolder="unet"
+                # )
                 model.register_to_config(**load_model.config)
 
                 model.load_state_dict(load_model.state_dict())
@@ -666,7 +668,7 @@ def main():
 
     if args.gradient_checkpointing:
         text_encoder.enable_gradient_checkpointing()
-        unet.enable_gradient_checkpointing()
+        # unet.enable_gradient_checkpointing()
 
     # Enable TF32 for faster training on Ampere GPUs,
     # cf https://pytorch.org/docs/stable/notes/cuda.html#tensorfloat-32-tf32-on-ampere-devices
@@ -700,13 +702,13 @@ def main():
         weight_decay=args.adam_weight_decay,
         eps=args.adam_epsilon,
     )
-    optimizer = optimizer_cls(
-        unet.parameters(),
-        lr=args.learning_rate,
-        betas=(args.adam_beta1, args.adam_beta2),
-        weight_decay=args.adam_weight_decay,
-        eps=args.adam_epsilon,
-    )
+    # optimizer = optimizer_cls(
+    #     unet.parameters(),
+    #     lr=args.learning_rate,
+    #     betas=(args.adam_beta1, args.adam_beta2),
+    #     weight_decay=args.adam_weight_decay,
+    #     eps=args.adam_epsilon,
+    # )
 
     # Get the datasets: you can either provide your own training and evaluation files (see below)
     # or specify a Dataset from the hub (the dataset will be downloaded automatically from the datasets Hub).
@@ -915,13 +917,13 @@ def main():
 
     # Prepare everything with our `accelerator`.
     
-    unet, text_encoder, optimizer, train_dataloader, lr_scheduler = accelerator.prepare(
-        unet, text_encoder, optimizer, train_dataloader, lr_scheduler
+    text_encoder, optimizer, train_dataloader, lr_scheduler = accelerator.prepare(
+        text_encoder, optimizer, train_dataloader, lr_scheduler
     )
 
     if args.use_ema:
         ema_text_encoder.to(accelerator.device)
-        ema_unet.to(accelerator.device)
+        # ema_unet.to(accelerator.device)
 
     # For mixed precision training we cast the text_encoder and vae weights to half-precision
     # as these models are only used for inference, keeping weights in full precision is not required.
@@ -1004,7 +1006,7 @@ def main():
 
     for epoch in range(first_epoch, args.num_train_epochs):
         text_encoder.train()
-        unet.train()
+        # unet.train()
         train_loss = 0.0
         for step, batch in enumerate(train_dataloader):
             # Skip steps until we reach the resumed step
@@ -1112,7 +1114,7 @@ def main():
                 accelerator.backward(loss)
                 if accelerator.sync_gradients:
                     accelerator.clip_grad_norm_(text_encoder.parameters(), args.max_grad_norm)
-                    accelerator.clip_grad_norm_(unet.parameters(), args.max_grad_norm)
+                    # accelerator.clip_grad_norm_(unet.parameters(), args.max_grad_norm)
                 optimizer.step()
                 lr_scheduler.step()
                 optimizer.zero_grad()
@@ -1121,7 +1123,7 @@ def main():
             if accelerator.sync_gradients:
                 if args.use_ema:
                     ema_text_encoder.step(text_encoder.parameters())
-                    ema_unet.step(unet.parameters())
+                    # ema_unet.step(unet.parameters())
                 progress_bar.update(1)
                 global_step += 1
                 accelerator.log({"train_loss": train_loss}, step=global_step)
@@ -1158,12 +1160,11 @@ def main():
                         # Store the UNet parameters temporarily and load the EMA parameters to perform inference.
                         ema_text_encoder.store(text_encoder.parameters())
                         ema_text_encoder.copy_to(text_encoder.parameters())
-                        ema_unet.store(unet.parameters())
-                        ema_unet.copy_to(unet.parameters())
+                        # ema_unet.store(unet.parameters())
+                        # ema_unet.copy_to(unet.parameters())
                     pipeline = StableDiffusionInstructPix2PixPipeline.from_pretrained(
                         args.pretrained_model_name_or_path,
                         text_encoder=text_encoder,
-                        unet=unet,
                         revision=args.revision,
                         torch_dtype=weight_dtype,
                     )
@@ -1209,7 +1210,7 @@ def main():
                     if args.use_ema:
                         # Switch back to the original UNet parameters.
                         ema_text_encoder.restore(text_encoder.parameters())
-                        ema_unet.restore(unet.parameters())
+                        # ema_unet.restore(unet.parameters())
 
                     del pipeline
                     torch.cuda.empty_cache()
@@ -1281,9 +1282,9 @@ def main():
         if args.use_ema:
             ema_text_encoder.copy_to(text_encoder.parameters())
             
-        unet = accelerator.unwrap_model(unet)
-        if args.use_ema:
-            ema_unet.copy_to(unet.parameters())
+        # unet = accelerator.unwrap_model(unet)
+        # if args.use_ema:
+        #     ema_unet.copy_to(unet.parameters())
 
         pipeline = StableDiffusionInstructPix2PixPipeline.from_pretrained(
             args.pretrained_model_name_or_path,

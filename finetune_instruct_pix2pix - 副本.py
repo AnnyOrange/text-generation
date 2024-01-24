@@ -336,7 +336,7 @@ def parse_args():
     parser.add_argument(
         "--hub_token",
         type=str,
-        default="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",
+        default=None,
         help="The token to use to push to the Model Hub.",
     )
     parser.add_argument(
@@ -1090,73 +1090,72 @@ def main():
 
             if global_step >= args.max_train_steps:
                 break
-            
-        if accelerator.is_main_process:
-            if (
-                    (args.val_image_url is not None)
-                    and (args.validation_prompt is not None)
-                    and (epoch % args.validation_epochs == 0)
-            ):
-                logger.info(
-                    f"Running validation... \n Generating {args.num_validation_images} images with prompt:"
-                    f" {args.validation_prompt}."
-                )
-                # create pipeline
-                if args.use_ema:
-                    # Store the UNet parameters temporarily and load the EMA parameters to perform inference.
-                    ema_unet.store(unet.parameters())
-                    ema_unet.copy_to(unet.parameters())
-                pipeline = StableDiffusionInstructPix2PixPipeline.from_pretrained(
-                    args.pretrained_model_name_or_path,
-                    unet=unet,
-                    revision=args.revision,
-                    torch_dtype=weight_dtype,
-                )
-                pipeline = pipeline.to(accelerator.device)
-                pipeline.set_progress_bar_config(disable=True)
-
-                # run inference
-                init_image = download_image(args.val_image_url)
-                gt_image = download_image(args.val_gt_url)
-                edited_images = []
-                with torch.autocast(
-                        str(accelerator.device),
-                        enabled=accelerator.mixed_precision == "fp16",
+            if accelerator.is_main_process:
+                if (
+                        (args.val_image_url is not None)
+                        and (args.validation_prompt is not None)
+                        and (epoch % args.validation_epochs == 0)
                 ):
-                    for _ in range(args.num_validation_images):
-                        print(f"validate{global_step}", args.num_validation_images)
-                        edited_images.append(
-                            pipeline(
-                                args.validation_prompt,
-                                image=init_image,
-                                num_inference_steps=20,
-                                image_guidance_scale=1.5,
-                                guidance_scale=7,
-                                generator=generator,
-                            ).images[0]
-                        )
-                for tracker in accelerator.trackers:
-                    if tracker.name == "wandb":
-                        # wandb_table = wandb.Table(columns=WANDB_TABLE_COL_NAMES)
-                        for edited_image in edited_images:
-                            Img = wandb.Image(edited_image, caption="step:{}".format(step))
-                            # wandb_table.add_data(
-                            #     wandb.Image(original_image),
-                            #     wandb.Image(edited_image),
-                            #     args.validation_prompt,
-                            # )
-                        loss = image_loss(edited_image, gt_image)
-                        tracker.log({f"image": Img})
-                        tracker.log({"image_loss": loss})
-                        tracker.log({"train_loss": train_loss})
-                        edited_image.save(f"./test/{step}.jpg")
+                    logger.info(
+                        f"Running validation... \n Generating {args.num_validation_images} images with prompt:"
+                        f" {args.validation_prompt}."
+                    )
+                    # create pipeline
+                    if args.use_ema:
+                        # Store the UNet parameters temporarily and load the EMA parameters to perform inference.
+                        ema_unet.store(unet.parameters())
+                        ema_unet.copy_to(unet.parameters())
+                    pipeline = StableDiffusionInstructPix2PixPipeline.from_pretrained(
+                        args.pretrained_model_name_or_path,
+                        unet=unet,
+                        revision=args.revision,
+                        torch_dtype=weight_dtype,
+                    )
+                    pipeline = pipeline.to(accelerator.device)
+                    pipeline.set_progress_bar_config(disable=True)
 
-                if args.use_ema:
-                    # Switch back to the original UNet parameters.
-                    ema_unet.restore(unet.parameters())
+                    # run inference
+                    init_image = download_image(args.val_image_url)
+                    gt_image = download_image(args.val_gt_url)
+                    edited_images = []
+                    with torch.autocast(
+                            str(accelerator.device),
+                            enabled=accelerator.mixed_precision == "fp16",
+                    ):
+                        for _ in range(args.num_validation_images):
+                            print(f"validate{global_step}", args.num_validation_images)
+                            edited_images.append(
+                                pipeline(
+                                    args.validation_prompt,
+                                    image=init_image,
+                                    num_inference_steps=20,
+                                    image_guidance_scale=1.5,
+                                    guidance_scale=7,
+                                    generator=generator,
+                                ).images[0]
+                            )
+                    for tracker in accelerator.trackers:
+                        if tracker.name == "wandb":
+                            # wandb_table = wandb.Table(columns=WANDB_TABLE_COL_NAMES)
+                            for edited_image in edited_images:
+                                Img = wandb.Image(edited_image, caption="step:{}".format(step))
+                                # wandb_table.add_data(
+                                #     wandb.Image(original_image),
+                                #     wandb.Image(edited_image),
+                                #     args.validation_prompt,
+                                # )
+                            loss = image_loss(edited_image, gt_image)
+                            tracker.log({f"image": Img})
+                            tracker.log({"image_loss": loss})
+                            tracker.log({"train_loss": train_loss})
+                            edited_image.save(f"./test/{step}.jpg")
 
-                del pipeline
-                torch.cuda.empty_cache()
+                    if args.use_ema:
+                        # Switch back to the original UNet parameters.
+                        ema_unet.restore(unet.parameters())
+
+                    del pipeline
+                    torch.cuda.empty_cache()
 
         # if accelerator.is_main_process:
         #     if (

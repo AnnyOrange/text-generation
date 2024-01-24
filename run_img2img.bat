@@ -1,4 +1,4 @@
-set MODEL_ID=timbrooks/instruct-pix2pix
+set MODEL_ID=runwayml/stable-diffusion-v1-5
 set DATASET_ID=annyorange/Text-style-dataset
 set OUTPUT_DIR=text-finetuned
 
